@@ -37,7 +37,25 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    
+    # Local apps
+    'orders',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10,
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}
+
+# Microservice URLs
+MICROSERVICE_URLS = {
+    'PRODUCT_SERVICE': 'http://localhost:8001/api',
+    'CUSTOMER_SERVICE': 'http://localhost:8002/api',
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -75,8 +93,12 @@ WSGI_APPLICATION = 'order_service.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'order_db',
+        'USER': 'postgres',  # change to your PostgreSQL username
+        'PASSWORD': '0915166497Bc#',  # change to your PostgreSQL password
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
