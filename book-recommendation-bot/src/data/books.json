@@ -1,0 +1,32 @@
+[
+    {
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "genre": "Fiction",
+        "description": "A novel about the serious issues of rape and racial inequality, narrated by a young girl in the Deep South."
+    },
+    {
+        "title": "1984",
+        "author": "George Orwell",
+        "genre": "Dystopian",
+        "description": "A dystopian social science fiction novel and cautionary tale about the dangers of totalitarianism."
+    },
+    {
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "genre": "Romance",
+        "description": "A romantic novel that charts the emotional development of the protagonist, Elizabeth Bennet."
+    },
+    {
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "genre": "Classic",
+        "description": "A story about the young and mysterious millionaire Jay Gatsby and his obsession with the beautiful Daisy Buchanan."
+    },
+    {
+        "title": "Moby Dick",
+        "author": "Herman Melville",
+        "genre": "Adventure",
+        "description": "The narrative of Captain Ahab's obsessive quest to seek revenge on Moby Dick, the giant white sperm whale."
+    }
+]

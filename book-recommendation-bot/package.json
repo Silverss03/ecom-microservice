@@ -1,0 +1,24 @@
+{
+  "name": "book-recommendation-bot",
+  "version": "1.0.0",
+  "description": "A simple chatbot service that recommends books based on user preferences.",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "body-parser": "^1.19.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "keywords": [
+    "chatbot",
+    "recommendation",
+    "books"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}

@@ -65,3 +65,23 @@ class ProductSearchView(viewsets.ViewSet):
             results.extend(mobile_data)
             
         return Response(results)
+
+class ProductViewSet(viewsets.ModelViewSet):
+    # ...existing code...
+    
+    @action(detail=True, methods=['post'], url_path='sentiment')
+    def process_sentiment(self, request, pk=None):
+        """Process sentiment data for a product"""
+        product = self.get_object()
+        
+        sentiment_score = request.data.get('sentiment_score')
+        sentiment_aspects = request.data.get('sentiment_aspects', [])
+        rating = request.data.get('rating')
+        
+        # Get or create ProductSentiment object
+        sentiment, created = ProductSentiment.objects.get_or_create(product=product)
+        
+        # Update sentiment data
+        sentiment.update_with_sentiment(sentiment_score, sentiment_aspects, rating)
+        
+        return Response({'status': 'sentiment processed'})

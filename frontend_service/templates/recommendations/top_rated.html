@@ -1,0 +1,36 @@
+<section class="recommendation-section">
+    <div class="container">
+      <h3 class="recommendation-title">Top-Rated Products</h3>
+      <p class="text-muted mb-4">Highest rated by customer sentiment</p>
+      
+      <div class="row">
+        {% if recommendations %}
+          {% for product in recommendations %}
+            <div class="col-6 col-md-3 mb-4">
+              <div class="card h-100 product-card">
+                <div class="position-relative">
+                  <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}">
+                  <span class="position-absolute top-0 end-0 badge bg-success m-2">
+                    {{ (product.score * 100)|int }}% positive
+                  </span>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{ product.name }}</h5>
+                  <p class="card-text price">${{ product.price }}</p>
+                  <div class="d-grid">
+                    <a href="/products/{{ product.id }}" class="btn btn-outline-primary">View Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        {% else %}
+          <div class="col-12">
+            <div class="alert alert-light text-center">
+              No top-rated products found
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
